@@ -8,12 +8,13 @@ import {
     BarElement,
     CategoryScale,
     Chart as ChartJS,
+    Filler,
     Legend,
     LinearScale,
     LineController,
     LineElement,
     PointElement,
-    Tooltip,
+    Tooltip
 } from 'chart.js';
 import {ArrowUp} from "iconsax-react";
 
@@ -26,7 +27,8 @@ ChartJS.register(
     Legend,
     Tooltip,
     LineController,
-    BarController
+    BarController,
+    Filler
 );
 
 const labels = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -35,24 +37,24 @@ export const data = {
     labels,
     datasets: [
         {
-            type: 'line' as const,
-            borderColor: 'rgb(255, 99, 132)',
-            borderWidth: 2,
-            backgroundColor: 'none',
-            pointRadius: 0,
-            fill: true,
-            fillOpacity: 0.2,
-            tension: 0.4,
-            data: [20, 50, 90, 30, 80, 10, 10],
-        },
-        {
             type: 'bar' as const,
             backgroundColor: theme.palette.primary.main,
             data: [10, 40, 80, 20, 70, 0, 0],
             borderWidth: 0,
             barPercentage: 0.5,
             borderRadius: 4,
-        }
+        },
+        {
+            type: 'line' as const,
+            backgroundColor: 'rgba(25, 35, 88, 1)',
+            // borderColor: 'rgba(55, 88, 245, 0.8)',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.4,
+            data: [20, 50, 90, 30, 80, 10, 10],
+            fill: true,
+        },
+
     ],
 };
 
@@ -62,11 +64,6 @@ const options = {
         legend: {
             display: false
         },
-    },
-    y: {
-        ticks: {
-            display: false
-        }
     },
     scales: {
         x: {
@@ -82,7 +79,7 @@ const options = {
                 display: false
             },
             ticks: {
-                display: false
+                display: false,
             }
         },
     },
