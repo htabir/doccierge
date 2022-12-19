@@ -12,9 +12,9 @@ const DashboardPage = () => {
     };
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
             <Grid item lg={8} md={12} sm={12} xs={12}>
-                <Box>
+                <Box sx={{maxHeight: 48}}>
                     <FormControl sx={{m: 1, minWidth: 120}} size="small">
                         <Select
                             labelId="demo-select-small"
@@ -42,7 +42,7 @@ const DashboardPage = () => {
                         </Select>
                     </FormControl>
                 </Box>
-                <Grid container sx={{mt: 1}}>
+                <Grid container sx={{mt: 2}}>
                     <Grid
                         item
                         md={4} sm={12} xs={12}
@@ -116,6 +116,7 @@ const DashboardPage = () => {
             <Grid item lg={4} md={12} sm={12} xs={12}>
                 <Box
                     sx={{
+                        maxHeight: 48,
                         display: 'flex',
                         alignItems: 'center',
                         '& > *': {
@@ -147,7 +148,7 @@ const DashboardPage = () => {
                 </Box>
                 <Box
                     sx={{
-                        mt: 1,
+                        mt: 2,
                         height: 400,
                         width: "100%",
                         bgcolor: theme.palette.background.paper,
