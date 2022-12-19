@@ -5,11 +5,15 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@mui/icons-material": "^5.11.0",
     "@mui/material": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "iconsax-react": "^0.0.8",
     "react": "latest",
+    "react-chartjs-2": "^5.0.1",
     "react-dom": "latest",
+    "react-router-dom": "^6.5.0",
     "react-scripts": "latest",
     "typescript": "latest"
   },
