@@ -33,7 +33,7 @@ const AppLayout: React.FC<Props> = ({children}) => {
                 <DesktopDrawer open={drawerOpen} setOpen={setDrawerOpen}/>
             }
             <Box component="main" sx={{flexGrow: 1, p: 4}}>
-                {isTablet ? <DrawerHeader/> : null}
+                <DrawerHeader/>
                 {children}
             </Box>
         </Box>

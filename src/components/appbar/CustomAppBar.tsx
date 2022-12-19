@@ -54,7 +54,7 @@ const CustomAppBar: React.FC<Props> = ({open, setOpen}) => {
                     onClick={handleDrawerOpen}
                     edge="start"
                     sx={{
-                        marginRight: 0,
+                        marginRight: 5,
                         ...(open && {display: 'none'}),
                     }}
                 >
