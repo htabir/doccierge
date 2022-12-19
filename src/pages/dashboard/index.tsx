@@ -5,6 +5,7 @@ import theme from "../../theme";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from 'chart.js';
 import AppointmentCard from "../../components/dashboard/AppointmentCard";
 import WorkloadCard from "../../components/dashboard/WorkloadCard";
+import HealthScoreCard from "../../components/dashboard/HealthScoreCard";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -50,26 +51,7 @@ const DashboardPage = () => {
                 </Box>
                 <Grid container sx={{mt: 2}}>
                     <AppointmentCard/>
-                    <Grid
-                        item
-                        md={4} sm={12} xs={12}
-                        sx={{
-                            padding: {md: "0 8px 0 8px", sm: 'none'}
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                height: 248,
-                                width: "100%",
-                                bgcolor: theme.palette.background.paper,
-                                borderRadius: 8,
-                                padding: 2
-                            }}
-                        >
-                            <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Health Score</Typography>
-
-                        </Box>
-                    </Grid>
+                    <HealthScoreCard/>
                     <WorkloadCard/>
                 </Grid>
                 <Box

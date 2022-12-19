@@ -37,7 +37,7 @@ const WorkloadCard = () => {
         item
         md={4} sm={12} xs={12}
         sx={{
-            padding: {md: "0 16px 0 0", sm: 'none'}
+            padding: {md: "0 0 0 16px", sm: 'none'}
         }}
     >
         <Box
@@ -73,7 +73,6 @@ const WorkloadCard = () => {
             >
                 <Typography variant={"caption"}>Your workload today</Typography>
                 <Typography sx={{fontSize: 24}}>75%</Typography>
-
             </Box>
         </Box>
     </Grid>;
