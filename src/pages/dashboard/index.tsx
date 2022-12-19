@@ -1,7 +1,11 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import {Button, ButtonGroup, FormControl, Grid, MenuItem, Select} from "@mui/material";
+import {Avatar, Button, ButtonGroup, FormControl, Grid, MenuItem, Select, Typography} from "@mui/material";
 import theme from "../../theme";
+import {ArcElement, Chart as ChartJS, Legend, Tooltip} from 'chart.js';
+import AppointmentCard from "../../components/dashboard/AppointmentCard";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 const DashboardPage = () => {
@@ -10,6 +14,7 @@ const DashboardPage = () => {
     const handleDrawerOpen = () => {
         setOpen(true);
     };
+
 
     return (
         <Grid container spacing={3}>
@@ -43,25 +48,7 @@ const DashboardPage = () => {
                     </FormControl>
                 </Box>
                 <Grid container sx={{mt: 2}}>
-                    <Grid
-                        item
-                        md={4} sm={12} xs={12}
-                        sx={{
-                            padding: {md: "0 16px 0 0", sm: 'none'}
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                height: 248,
-                                width: "100%",
-                                bgcolor: theme.palette.background.paper,
-                                borderRadius: 8,
-                                padding: 2,
-                            }}
-                        >
-
-                        </Box>
-                    </Grid>
+                    <AppointmentCard/>
                     <Grid
                         item
                         md={4} sm={12} xs={12}
@@ -74,9 +61,11 @@ const DashboardPage = () => {
                                 height: 248,
                                 width: "100%",
                                 bgcolor: theme.palette.background.paper,
-                                borderRadius: 8
+                                borderRadius: 8,
+                                padding: 2
                             }}
                         >
+                            <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Health Score</Typography>
 
                         </Box>
                     </Grid>
@@ -92,9 +81,11 @@ const DashboardPage = () => {
                                 height: 248,
                                 width: "100%",
                                 bgcolor: theme.palette.background.paper,
-                                borderRadius: 8
+                                borderRadius: 8,
+                                padding: 2
                             }}
                         >
+                            <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Today's Workload</Typography>
 
                         </Box>
                     </Grid>
@@ -109,7 +100,7 @@ const DashboardPage = () => {
                         mt: 3
                     }}
                 >
-
+                    <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Visits of Period</Typography>
                 </Box>
 
             </Grid>
@@ -149,13 +140,55 @@ const DashboardPage = () => {
                 <Box
                     sx={{
                         mt: 2,
-                        height: 400,
                         width: "100%",
                         bgcolor: theme.palette.background.paper,
-                        borderRadius: 8
+                        borderRadius: 8,
+                        padding: 2,
+                        marginBottom: '16px'
                     }}
                 >
-
+                    <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Upcoming Appointments</Typography>
+                    <Box
+                        sx={{
+                            height: 56,
+                            bgcolor: theme.palette.primary.dark,
+                            borderRadius: 4,
+                            display: 'flex',
+                            alignItems: 'center',
+                            paddingX: 2,
+                        }}
+                    >
+                        <Typography variant={"body1"} sx={{color: "white", width: 96}}>08:30 am</Typography>
+                        <Avatar
+                            sx={{
+                                height: 40, width: 40
+                            }}
+                        >
+                            I
+                        </Avatar>
+                        <Typography variant={"body1"} sx={{color: "white", ml: 2}}>Ivan</Typography>
+                    </Box>
+                    <Box
+                        sx={{
+                            height: 56,
+                            bgcolor: theme.palette.primary.dark,
+                            borderRadius: 4,
+                            display: 'flex',
+                            alignItems: 'center',
+                            paddingX: 2,
+                            my: 1,
+                        }}
+                    >
+                        <Typography variant={"body1"} sx={{color: "white", width: 96}}>08:30 am</Typography>
+                        <Avatar
+                            sx={{
+                                height: 40, width: 40
+                            }}
+                        >
+                            I
+                        </Avatar>
+                        <Typography variant={"body1"} sx={{color: "white", ml: 2}}>Ivan</Typography>
+                    </Box>
                 </Box>
             </Grid>
         </Grid>

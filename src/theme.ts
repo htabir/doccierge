@@ -178,13 +178,13 @@ const theme = createTheme({
         },
         background: {
             default: '#080E28',
-            paper: '#0C1439'
+            paper: '#0C1439',
         },
         divider: '#30376B',
         primary: {
             main: '#3758F5',
             light: '#CDE2FC',
-            dark: '#1D8BFA',
+            dark: '#0E2255',
             contrastText: '#FFFFFF'
         },
         secondary: {
