@@ -25,7 +25,7 @@ const AppLayout: React.FC<Props> = ({children}) => {
             <CssBaseline/>
             <CustomAppBar open={drawerOpen} setOpen={setDrawerOpen}/>
             <CustomDrawer open={drawerOpen} setOpen={setDrawerOpen}/>
-            <Box component="main" sx={{flexGrow: 1, p: 3}}>
+            <Box component="main" sx={{flexGrow: 1, p: 4}}>
                 <DrawerHeader/>
                 {children}
             </Box>
