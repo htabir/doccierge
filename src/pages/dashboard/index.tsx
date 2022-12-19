@@ -1,11 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import {Avatar, Button, ButtonGroup, FormControl, Grid, MenuItem, Select, Typography} from "@mui/material";
+import {Button, ButtonGroup, FormControl, Grid, MenuItem, Select} from "@mui/material";
 import theme from "../../theme";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from 'chart.js';
 import AppointmentCard from "../../components/dashboard/AppointmentCard";
 import WorkloadCard from "../../components/dashboard/WorkloadCard";
 import HealthScoreCard from "../../components/dashboard/HealthScoreCard";
+import VisitsOfPeriodsCard from "../../components/dashboard/VisitsOfPeriodsCard";
+import UpcomingAppointments from "../../components/dashboard/UpcomingAppointments";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -54,18 +56,7 @@ const DashboardPage = () => {
                     <HealthScoreCard/>
                     <WorkloadCard/>
                 </Grid>
-                <Box
-                    sx={{
-                        height: 400,
-                        width: "100%",
-                        bgcolor: theme.palette.background.paper,
-                        borderRadius: 8,
-                        padding: 2,
-                        mt: 3
-                    }}
-                >
-                    <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Visits of Period</Typography>
-                </Box>
+                <VisitsOfPeriodsCard/>
 
             </Grid>
             <Grid item lg={4} md={12} sm={12} xs={12}>
@@ -101,59 +92,8 @@ const DashboardPage = () => {
                         </Button>
                     </ButtonGroup>
                 </Box>
-                <Box
-                    sx={{
-                        mt: 2,
-                        width: "100%",
-                        bgcolor: theme.palette.background.paper,
-                        borderRadius: 8,
-                        padding: 2,
-                        marginBottom: '16px'
-                    }}
-                >
-                    <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Upcoming Appointments</Typography>
-                    <Box
-                        sx={{
-                            height: 56,
-                            bgcolor: theme.palette.primary.dark,
-                            borderRadius: 4,
-                            display: 'flex',
-                            alignItems: 'center',
-                            paddingX: 2,
-                        }}
-                    >
-                        <Typography variant={"body1"} sx={{color: "white", width: 96}}>08:30 am</Typography>
-                        <Avatar
-                            sx={{
-                                height: 40, width: 40
-                            }}
-                        >
-                            I
-                        </Avatar>
-                        <Typography variant={"body1"} sx={{color: "white", ml: 2}}>Ivan</Typography>
-                    </Box>
-                    <Box
-                        sx={{
-                            height: 56,
-                            bgcolor: theme.palette.primary.dark,
-                            borderRadius: 4,
-                            display: 'flex',
-                            alignItems: 'center',
-                            paddingX: 2,
-                            my: 1,
-                        }}
-                    >
-                        <Typography variant={"body1"} sx={{color: "white", width: 96}}>08:30 am</Typography>
-                        <Avatar
-                            sx={{
-                                height: 40, width: 40
-                            }}
-                        >
-                            I
-                        </Avatar>
-                        <Typography variant={"body1"} sx={{color: "white", ml: 2}}>Ivan</Typography>
-                    </Box>
-                </Box>
+                <UpcomingAppointments/>
+
             </Grid>
         </Grid>
     );

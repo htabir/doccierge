@@ -4,7 +4,7 @@ import theme from "../../theme";
 import {Grid, Typography} from "@mui/material";
 import {Doughnut} from "react-chartjs-2";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from 'chart.js';
-import Dot from "../global/Dot";
+import ChartLabel from "./ChartLabel";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -32,23 +32,6 @@ const options = {
 
     responsive: true,
     cutout: 30
-}
-
-interface ChartLabelProps {
-    label: string;
-    color: string;
-    data: number;
-}
-
-const ChartLabel: React.FC<ChartLabelProps> = ({label, color, data}) => {
-    return (
-        <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} key={label}>
-            <Dot color={color}/>
-            <Typography variant={"body2"}>{label}</Typography>
-            <Box sx={{flexGrow: 1, height: 10, marginX: 0.5, borderBottom: "1px solid #30376B"}}/>
-            <Typography variant={"body2"}>{data}%</Typography>
-        </Box>
-    );
 }
 
 const AppointmentCard = () => {
