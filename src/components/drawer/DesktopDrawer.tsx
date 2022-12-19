@@ -56,7 +56,7 @@ interface Props {
     setOpen: (open: boolean) => void;
 }
 
-const CustomDrawer: React.FC<Props> = ({open, setOpen}) => {
+const DesktopDrawer: React.FC<Props> = ({open, setOpen}) => {
 
     const theme = useTheme();
     const [active, setActive] = React.useState("/");
@@ -127,4 +127,4 @@ const CustomDrawer: React.FC<Props> = ({open, setOpen}) => {
     );
 }
 
-export default CustomDrawer;
+export default DesktopDrawer;

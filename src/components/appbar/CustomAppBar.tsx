@@ -10,6 +10,8 @@ import {Avatar, Box} from "@mui/material";
 
 const drawerWidth = 288;
 
+// const isTablet = useMediaQuery("(max-width: 900px)");
+
 interface AppBarProps extends MuiAppBarProps {
     open?: boolean;
 }
@@ -52,7 +54,7 @@ const CustomAppBar: React.FC<Props> = ({open, setOpen}) => {
                     onClick={handleDrawerOpen}
                     edge="start"
                     sx={{
-                        marginRight: 5,
+                        marginRight: 0,
                         ...(open && {display: 'none'}),
                     }}
                 >
@@ -67,12 +69,6 @@ const CustomAppBar: React.FC<Props> = ({open, setOpen}) => {
                     }}
                 >
                     <Avatar sx={{bgcolor: 'primary.main', color: 'text.primary'}}>JH</Avatar>
-                    {/*<IconButton sx={{*/}
-                    {/*    ml: 2,*/}
-                    {/*    display: {xs: 'block', sm: 'none'},*/}
-                    {/*}}>*/}
-                    {/*    <TextalignLeft variant={"Linear"} color={theme.palette.text.primary} />*/}
-                    {/*</IconButton>*/}
 
                 </Box>
             </Toolbar>

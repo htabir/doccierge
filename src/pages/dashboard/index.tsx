@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import {Button, ButtonGroup, FormControl, Grid, MenuItem, Select} from "@mui/material";
+import {Button, ButtonGroup, FormControl, Grid, MenuItem, Select, useMediaQuery} from "@mui/material";
 import theme from "../../theme";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from 'chart.js';
 import AppointmentCard from "../../components/dashboard/AppointmentCard";
@@ -13,12 +13,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 const DashboardPage = () => {
-    const [open, setOpen] = React.useState(false);
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-
+    const isTablet = useMediaQuery("(max-width: 900px)");
 
     return (
         <Grid container spacing={3}>
@@ -51,7 +47,7 @@ const DashboardPage = () => {
                         </Select>
                     </FormControl>
                 </Box>
-                <Grid container sx={{mt: 2}}>
+                <Grid container sx={{mt: 2}} spacing={isTablet ? 2 : 0}>
                     <AppointmentCard/>
                     <HealthScoreCard/>
                     <WorkloadCard/>
