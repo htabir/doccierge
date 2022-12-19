@@ -4,6 +4,7 @@ import {Avatar, Button, ButtonGroup, FormControl, Grid, MenuItem, Select, Typogr
 import theme from "../../theme";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from 'chart.js';
 import AppointmentCard from "../../components/dashboard/AppointmentCard";
+import WorkloadCard from "../../components/dashboard/WorkloadCard";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -69,26 +70,7 @@ const DashboardPage = () => {
 
                         </Box>
                     </Grid>
-                    <Grid
-                        item
-                        md={4} sm={12} xs={12}
-                        sx={{
-                            padding: {md: "0 0 0 16px", sm: 'none'}
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                height: 248,
-                                width: "100%",
-                                bgcolor: theme.palette.background.paper,
-                                borderRadius: 8,
-                                padding: 2
-                            }}
-                        >
-                            <Typography variant={"body1"} sx={{mb: 2, fontWeight: 600}}>Today's Workload</Typography>
-
-                        </Box>
-                    </Grid>
+                    <WorkloadCard/>
                 </Grid>
                 <Box
                     sx={{
